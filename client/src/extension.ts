@@ -109,7 +109,8 @@ export async function activate(ctx: ExtensionContext) {
             fileEvents: workspace.createFileSystemWatcher(
                 path.join(
                     workspace.workspaceFolders[0].uri.fsPath,
-                    '.vscode/vhdl_ls.toml'
+                    '.vscode',
+                    'vhdl_ls.toml'
                 )
             ),
         };
