@@ -231,12 +231,18 @@ async function getServerOptionsDocker() {
 
 function getServerOptionsEmbedded(context: ExtensionContext) {
     let serverCommand = context.asAbsolutePath(languageServer);
+    let serverArgs = [
+        '--config',
+        '.vscode/vhdl_ls.toml'
+    ];
     let serverOptions: ServerOptions = {
         run: {
             command: serverCommand,
+            args: serverArgs,
         },
         debug: {
             command: serverCommand,
+            args: serverArgs,
         },
     };
     return serverOptions;
